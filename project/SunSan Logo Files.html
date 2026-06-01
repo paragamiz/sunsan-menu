@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>SunSan · Logo Files</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Mali:wght@300;400;500;700&family=Nunito:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --c-yellow: #FCE38A;
+    --c-yellow-soft: #FFEEB0;
+    --c-blue: #A8D8EA;
+    --c-blue-soft: #CCE9F3;
+    --c-cream: #FFF9E6;
+    --c-paper: #FFFCEF;
+    --c-ink: #3D405B;
+    --c-ink-soft: #6B6E89;
+    --font-display: "Caveat", cursive;
+    --font-th: "Mali", cursive;
+    --font-body: "Nunito", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); background: var(--c-paper); color: var(--c-ink); padding: 56px; }
+  img { display: block; max-width: 100%; }
+  h1 { font-family: var(--font-display); font-weight: 500; font-size: 88px; line-height: 0.9; margin: 0; }
+  h2 { font-family: var(--font-display); font-weight: 500; font-size: 44px; line-height: 1; margin: 0 0 24px; }
+  .meta { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--c-ink-soft); }
+
+  header { max-width: 1280px; margin: 0 auto 56px; display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; border-bottom: 1px dashed rgba(61,64,91,0.25); padding-bottom: 40px; }
+  header .lead { font-family: var(--font-display); font-size: 28px; color: var(--c-ink-soft); margin-top: 8px; max-width: 460px; line-height: 1.1; }
+
+  main { max-width: 1280px; margin: 0 auto; }
+  section { margin-bottom: 64px; }
+  section .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; }
+  .grid { display: grid; gap: 20px; }
+  .grid.cols-2 { grid-template-columns: 1fr 1fr; }
+  .grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+  .card {
+    background: white;
+    border: 1px solid rgba(61,64,91,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .card .stage {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    position: relative;
+  }
+  .card.bg-yellow .stage { background: var(--c-yellow); }
+  .card.bg-blue .stage { background: var(--c-blue); }
+  .card.bg-cream .stage { background: var(--c-cream); }
+  .card.bg-ink .stage { background: var(--c-ink); }
+  .card.bg-white .stage { background: white; }
+
+  .card .foot {
+    padding: 16px 20px;
+    background: white;
+    border-top: 1px solid rgba(61,64,91,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .card .label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-ink); }
+  .card .sub { font-size: 11px; color: var(--c-ink-soft); }
+  .card a.dl {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    text-decoration: none; color: var(--c-ink);
+    border: 1px solid var(--c-ink);
+    padding: 6px 12px;
+    border-radius: 999px;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+  .card a.dl:hover { background: var(--c-ink); color: var(--c-cream); }
+
+  /* Lockup compositions */
+  .lock-h { display: flex; align-items: center; gap: 16px; }
+  .lock-h .sun { width: 32%; max-width: 140px; aspect-ratio: 1; }
+  .lock-h .word {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 76px; line-height: 0.9; color: var(--c-ink);
+    letter-spacing: -0.01em;
+  }
+  .lock-h .word-th {
+    font-family: var(--font-th); font-size: 20px; line-height: 1;
+    margin-top: 4px; color: var(--c-ink);
+  }
+  .lock-h.on-dark .word, .lock-h.on-dark .word-th { color: var(--c-cream); }
+
+  .lock-v { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .lock-v .sun { width: 40%; max-width: 120px; aspect-ratio: 1; }
+  .lock-v .word { font-family: var(--font-display); font-weight: 500; font-size: 64px; line-height: 0.9; }
+  .lock-v .word-th { font-family: var(--font-th); font-size: 14px; line-height: 1; color: var(--c-ink-soft); }
+  .lock-v.on-dark .word { color: var(--c-cream); }
+  .lock-v.on-dark .word-th { color: rgba(255,249,230,0.7); }
+
+  .mark-only { width: 70%; aspect-ratio: 1; }
+
+  .wordmark-only {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 88px; line-height: 0.9;
+    color: var(--c-ink);
+  }
+  .wordmark-only .accent { color: #E8A93C; }
+  .on-dark .wordmark-only { color: var(--c-cream); }
+  .on-dark .wordmark-only .accent { color: var(--c-yellow); }
+
+  /* Color swatches */
+  .swatch-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid rgba(61,64,91,0.08);
+    overflow: hidden;
+  }
+  .swatch-card .swatch {
+    aspect-ratio: 1.2 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .swatch-card .swatch img { width: 60%; }
+  .swatch-card .info {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .note {
+    background: var(--c-yellow-soft);
+    padding: 24px 28px;
+    border-radius: 16px;
+    margin-bottom: 32px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .note img { width: 60px; height: 60px; flex-shrink: 0; }
+  .note p { margin: 0; font-size: 14px; line-height: 1.6; }
+  .note p b { font-family: var(--font-display); font-size: 22px; display: block; line-height: 1; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="meta">SunSan · ซันซัง</div>
+    <h1 style="margin-top:8px;">Logo files</h1>
+    <p class="lead">Every lockup, every color · download as PNG · use anywhere.</p>
+  </div>
+  <div>
+    <div class="meta" style="text-align:right;">v01 · May 2026</div>
+    <div style="font-family:var(--font-mono); font-size:11px; color:var(--c-ink-soft); margin-top:6px;">9 · marks · 6 · colors</div>
+  </div>
+</header>
+
+<main>
+
+  <div class="note">
+    <img src="assets/sun-mark-ink.png" alt=""/>
+    <p>
+      <b>How to use these files</b>
+      Right-click any logo below → "Save image as…" to download the PNG. Each variant is 1024×1024 with transparent background. For print, ask the studio for SVG/EPS versions. Avoid recoloring outside the brand palette.
+    </p>
+  </div>
+
+  <!-- ============== 1 · The mark ============== -->
+  <section>
+    <div class="head">
+      <h2>The mark</h2>
+      <span class="meta">01 · primary symbol</span>
+    </div>
+
+    <div class="grid cols-3">
+      <div class="card bg-cream">
+        <div class="stage">
+          <img src="assets/sun-mark-ink.png" class="mark-only" alt="sun mark · ink on cream"/>
+        </div>
+        <div class="foot">
+          <div>
+            <div class="label">Mark · ink</div>
+            <div class="sub">on light backgrounds</div>
+          </div>
+          <a class="dl" href="assets/sun-mark-ink.png" download>PNG</a>
+        </div>
+      </div>
+
+      <div class="card bg-yellow">
+        <div class="stage">
+          <img src="assets/sun-mark-ink.png" class="mark-only" alt="sun mark · ink on yellow"/>
+        </div>
+        <div class="foot">
+          <div>
+            <div class="label">Mark · on yellow</div>
+            <div class="sub">primary brand color</div>
+          </div>
+          <a class="dl" href="assets/sun-mark-ink.png" download>PNG</a>
+        </div>
+      </div>
+
+      <div class="card bg-blue">
+        <div class="stage">
+          <img src="assets/sun-mark-ink.png" class="mark-only" alt="sun mark · ink on blue"/>
+        </div>
+        <div class="foot">
+          <div>
+            <div class="label">Mark · on blue</div>
+            <div class="sub">secondary surfaces</div>
+          </div>
+          <a class="dl" href="assets/sun-mark-ink.png" download>PNG</a>
+        </div>
+      </div>
+
+      <div class="card bg-ink">
+        <div class="stage">
+          <img src="assets/sun-mark-cream.png" class="mark-only" alt="sun mark · cream on ink"/>
+        </div>
+        <div class="foot">
+          <div>
+            <div class="label">Mark · cream</div>
+            <div class="sub">for dark backgrounds</div>
+          </div>
+          <a class="dl" href="assets/sun-mark-cream.png" download>PNG</a>
+        </div>
+      </div>
+
+      <div class="card bg-ink">
+        <div class="stage">
+          <img src="assets/sun-mark-yellow.png" class="mark-only" alt="sun mark · yellow on ink"/>
+        </div>
+        <div class="foot">
+          <div>
+            <div class="label">Mark · amber yellow</div>
+            <div class="sub">accent on dark</div>
+          </div>
+          <a class="dl" href="assets/sun-mark-yellow.png" download>PNG</a>
+        </div>
+      </div>
+
+      <div class="card bg-white">
+        <div class="stage">
+          <img src="assets/sun-mark-amber.png" class="mark-only" alt="sun mark · amber"/>
+        </div>
+        <div class="foot">
+          <div>
+            <div class="label">Mark · amber</div>
+            <div class="sub">warm alternate</div>
+          </div>
+          <a class="dl" href="assets/sun-mark-amber.png" download>PNG</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== 2 · Horizontal lockup ============== -->
+  <section>
+    <div class="head">
+      <h2>Horizontal lockup</h2>
+      <span class="meta">02 · default lockup</span>
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card bg-cream">
+        <div class="stage">
+          <div class="lock-h">
+            <img class="sun" src="assets/sun-mark-ink.png" alt=""/>
+            <div>
+              <div class="word">sunsan</div>
+              <div class="word-th">ซันซัง · catering</div>
+            </div>
+          </div>
+        </div>
+        <div class="foot">
+          <div><div class="label">Horizontal · ink</div><div class="sub">default everywhere</div></div>
+          <a class="dl" href="assets/sun-mark-ink.png" download>Components</a>
+        </div>
+      </div>
+
+      <div class="card bg-yellow">
+        <div class="stage">
+          <div class="lock-h">
+            <img class="sun" src="assets/sun-mark-ink.png" alt=""/>
+            <div>
+              <div class="word">sunsan</div>
+              <div class="word-th">ซันซัง · catering</div>
+            </div>
+          </div>
+        </div>
+        <div class="foot">
+          <div><div class="label">Horizontal · on yellow</div><div class="sub">brand surface</div></div>
+          <a class="dl" href="assets/sun-mark-ink.png" download>Components</a>
+        </div>
+      </div>
+
+      <div class="card bg-blue">
+        <div class="stage">
+          <div class="lock-h">
+            <img class="sun" src="assets/sun-mark-ink.png" alt=""/>
+            <div>
+              <div class="word">sunsan</div>
+              <div class="word-th">ซันซัง · catering</div>
+            </div>
+          </div>
+        </div>
+        <div class="foot">
+          <div><div class="label">Horizontal · on blue</div><div class="sub">secondary surface</div></div>
+          <a class="dl" href="assets/sun-mark-ink.png" download>Components</a>
+        </div>
+      </div>
+
+      <div class="card bg-ink">
+        <div class="stage">
+          <div class="lock-h on-dark">
+            <img class="sun" src="assets/sun-mark-cream.png" alt=""/>
+            <div>
+              <div class="word">sunsan</div>
+              <div class="word-th">ซันซัง · catering</div>
+            </div>
+          </div>
+        </div>
+        <div class="foot">
+          <div><div class="label">Horizontal · reversed</div><div class="sub">dark backgrounds</div></div>
+          <a class="dl" href="assets/sun-mark-cream.png" download>Components</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== 3 · Stacked lockup ============== -->
+  <section>
+    <div class="head">
+      <h2>Stacked lockup</h2>
+      <span class="meta">03 · narrow placements</span>
+    </div>
+
+    <div class="grid cols-3">
+      <div class="card bg-cream">
+        <div class="stage">
+          <div class="lock-v">
+            <img class="sun" src="assets/sun-mark-ink.png" alt=""/>
+            <div style="text-align:center;">
+              <div class="word">sunsan</div>
+              <div class="word-th">ซันซัง · catering</div>
+            </div>
+          </div>
+        </div>
+        <div class="foot">
+          <div><div class="label">Stacked · ink</div><div class="sub">profile photos, square</div></div>
+          <a class="dl" href="assets/sun-mark-ink.png" download>Components</a>
+        </div>
+      </div>
+
+      <div class="card bg-yellow">
+        <div class="stage">
+          <div class="lock-v">
+            <img class="sun" src="assets/sun-mark-ink.png" alt=""/>
+            <div style="text-align:center;">
+              <div class="word">sunsan</div>
+              <div class="word-th">ซันซัง · catering</div>
+            </div>
+          </div>
+        </div>
+        <div class="foot">
+          <div><div class="label">Stacked · on yellow</div><div class="sub">for stickers</div></div>
+          <a class="dl" href="assets/sun-mark-ink.png" download>Components</a>
+        </div>
+      </div>
+
+      <div class="card bg-ink">
+        <div class="stage">
+          <div class="lock-v on-dark">
+            <img class="sun" src="assets/sun-mark-cream.png" alt=""/>
+            <div style="text-align:center;">
+              <div class="word">sunsan</div>
+              <div class="word-th">ซันซัง · catering</div>
+            </div>
+          </div>
+        </div>
+        <div class="foot">
+          <div><div class="label">Stacked · reversed</div><div class="sub">on dark</div></div>
+          <a class="dl" href="assets/sun-mark-cream.png" download>Components</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== 4 · Wordmark only ============== -->
+  <section>
+    <div class="head">
+      <h2>Wordmark only</h2>
+      <span class="meta">04 · type-only treatment</span>
+    </div>
+
+    <div class="grid cols-2">
+      <div class="card bg-cream">
+        <div class="stage" style="padding-top:60px;padding-bottom:60px;">
+          <div class="wordmark-only">s<span class="accent">u</span>nsan</div>
+        </div>
+        <div class="foot">
+          <div><div class="label">Wordmark · ink</div><div class="sub">"u" doubles as the sun</div></div>
+          <a class="dl" href="#" onclick="window.print();return false;">Print</a>
+        </div>
+      </div>
+
+      <div class="card bg-ink on-dark">
+        <div class="stage" style="padding-top:60px;padding-bottom:60px;">
+          <div class="wordmark-only">s<span class="accent">u</span>nsan</div>
+        </div>
+        <div class="foot">
+          <div><div class="label">Wordmark · reversed</div><div class="sub">on dark surfaces</div></div>
+          <a class="dl" href="#" onclick="window.print();return false;">Print</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== 5 · Color variants ============== -->
+  <section>
+    <div class="head">
+      <h2>All mark colors</h2>
+      <span class="meta">05 · color variants · 1024×1024 PNG</span>
+    </div>
+
+    <div class="grid cols-3">
+      <div class="swatch-card">
+        <div class="swatch" style="background: var(--c-cream);">
+          <img src="assets/sun-mark-ink.png" alt=""/>
+        </div>
+        <div class="info">
+          <div>
+            <div class="label" style="font-family: var(--font-mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase;">Ink</div>
+            <div class="sub" style="font-size:11px; color:var(--c-ink-soft);">#3D405B</div>
+          </div>
+          <a class="dl" href="assets/sun-mark-ink.png" download>PNG</a>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch" style="background: var(--c-cream);">
+          <img src="assets/sun-mark-amber.png" alt=""/>
+        </div>
+        <div class="info">
+          <div>
+            <div class="label" style="font-family: var(--font-mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase;">Amber</div>
+            <div class="sub" style="font-size:11px; color:var(--c-ink-soft);">#C8851C</div>
+          </div>
+          <a class="dl" href="assets/sun-mark-amber.png" download>PNG</a>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch" style="background: var(--c-cream);">
+          <img src="assets/sun-mark-yellow.png" alt=""/>
+        </div>
+        <div class="info">
+          <div>
+            <div class="label" style="font-family: var(--font-mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase;">Yellow</div>
+            <div class="sub" style="font-size:11px; color:var(--c-ink-soft);">#E8A93C</div>
+          </div>
+          <a class="dl" href="assets/sun-mark-yellow.png" download>PNG</a>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch" style="background: var(--c-cream);">
+          <img src="assets/sun-mark-blue.png" alt=""/>
+        </div>
+        <div class="info">
+          <div>
+            <div class="label" style="font-family: var(--font-mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase;">Blue</div>
+            <div class="sub" style="font-size:11px; color:var(--c-ink-soft);">#5B9CB8</div>
+          </div>
+          <a class="dl" href="assets/sun-mark-blue.png" download>PNG</a>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch" style="background: var(--c-cream);">
+          <img src="assets/sun-mark-peach.png" alt=""/>
+        </div>
+        <div class="info">
+          <div>
+            <div class="label" style="font-family: var(--font-mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase;">Peach</div>
+            <div class="sub" style="font-size:11px; color:var(--c-ink-soft);">#D8714E</div>
+          </div>
+          <a class="dl" href="assets/sun-mark-peach.png" download>PNG</a>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch" style="background: var(--c-ink);">
+          <img src="assets/sun-mark-cream.png" alt=""/>
+        </div>
+        <div class="info">
+          <div>
+            <div class="label" style="font-family: var(--font-mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase;">Cream</div>
+            <div class="sub" style="font-size:11px; color:var(--c-ink-soft);">#FCE38A · on dark</div>
+          </div>
+          <a class="dl" href="assets/sun-mark-cream.png" download>PNG</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== 6 · Don't ============== -->
+  <section>
+    <div class="head">
+      <h2>Don't do this</h2>
+      <span class="meta">06 · rules</span>
+    </div>
+
+    <div class="grid cols-4">
+      <div class="card bg-white">
+        <div class="stage" style="position:relative;">
+          <img src="assets/sun-mark-ink.png" style="width:70%;transform:rotate(15deg);" alt=""/>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#D43A3A;font-size:120px;">✗</div>
+        </div>
+        <div class="foot"><div><div class="label">don't tilt</div><div class="sub">always upright</div></div></div>
+      </div>
+
+      <div class="card bg-white">
+        <div class="stage" style="position:relative;">
+          <img src="assets/sun-mark-ink.png" style="width:90%;height:50%;object-fit:fill;" alt=""/>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#D43A3A;font-size:120px;">✗</div>
+        </div>
+        <div class="foot"><div><div class="label">don't stretch</div><div class="sub">scale uniformly</div></div></div>
+      </div>
+
+      <div class="card bg-white">
+        <div class="stage" style="position:relative;background:linear-gradient(45deg,#FF5E5E,#5E89FF);">
+          <img src="assets/sun-mark-cream.png" style="width:70%;" alt=""/>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:white;font-size:120px;">✗</div>
+        </div>
+        <div class="foot"><div><div class="label">no gradients</div><div class="sub">solid colors only</div></div></div>
+      </div>
+
+      <div class="card bg-yellow">
+        <div class="stage" style="position:relative;">
+          <img src="assets/sun-mark-blue.png" style="width:70%;" alt=""/>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#D43A3A;font-size:120px;">✗</div>
+        </div>
+        <div class="foot"><div><div class="label">low contrast</div><div class="sub">use ink on light</div></div></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>

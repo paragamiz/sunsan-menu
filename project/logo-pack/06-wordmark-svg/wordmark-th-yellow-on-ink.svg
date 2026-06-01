@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    
+  </defs>
+  <rect width="1200" height="600" fill="#3D405B"></rect>
+  <g class="wm" font-size="320" text-anchor="middle" dominant-baseline="alphabetic">
+    <text x="600" y="330" fill="#FCE38A">s<tspan fill="#FFF9E6">u</tspan>nsan</text>
+  </g>
+  <text class="th" x="600" y="460" font-size="100" fill="#FCE38A" text-anchor="middle">ซันซัง</text>
+</svg>

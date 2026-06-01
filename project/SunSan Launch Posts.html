@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<title>SunSan · Launch posts · 9 ตอน</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Mali:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  :root {
+    --c-yellow: #FCE38A;
+    --c-yellow-soft: #FFEEB0;
+    --c-blue: #A8D8EA;
+    --c-blue-soft: #CCE9F3;
+    --c-cream: #FFF9E6;
+    --c-paper: #FFFCEF;
+    --c-ink: #3D405B;
+    --c-ink-soft: #6B6E89;
+    --c-peach: #FFD3B6;
+    --font-display: "Caveat", cursive;
+    --font-th: "Mali", cursive;
+    --font-body: "Nunito", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); background: var(--c-paper); color: var(--c-ink); }
+  img { display: block; }
+
+  /* ============ Post base ============ */
+  .post {
+    width: 100%; height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    font-family: var(--font-body);
+  }
+  .post.bg-yellow { background: var(--c-yellow); }
+  .post.bg-yellow-soft { background: var(--c-yellow-soft); }
+  .post.bg-blue { background: var(--c-blue); }
+  .post.bg-blue-soft { background: var(--c-blue-soft); }
+  .post.bg-cream { background: var(--c-cream); }
+  .post.bg-paper { background: var(--c-paper); }
+  .post.bg-ink { background: var(--c-ink); color: var(--c-cream); }
+
+  /* Tiny brand stamp in corner */
+  .stamp {
+    position: absolute; bottom: 28px; left: 28px;
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-ink-soft);
+  }
+  .stamp img { width: 24px; height: 24px; }
+  .post.bg-ink .stamp { color: rgba(255,249,230,0.6); }
+  .stamp .ig { display:flex; align-items:center; gap: 4px; }
+
+  /* Index dot top-right */
+  .index {
+    position: absolute; top: 28px; right: 28px;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--c-ink);
+    color: var(--c-cream);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-size: 26px;
+    line-height: 1;
+  }
+  .post.bg-ink .index { background: var(--c-yellow); color: var(--c-ink); }
+
+  /* ============ POST 1 — Teaser ============ */
+  .p1 { align-items: center; justify-content: center; flex-direction: column; padding: 60px; text-align: center; }
+  .p1 .big-sun {
+    width: 480px; height: 480px;
+    animation: pulse 4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+  }
+  .p1 .coming {
+    font-family: var(--font-display);
+    font-size: 56px;
+    line-height: 0.9;
+    margin-top: 28px;
+    color: var(--c-ink);
+  }
+  .p1 .date {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    color: var(--c-ink);
+    margin-top: 16px;
+  }
+
+  /* ============ POST 2 — Name reveal ============ */
+  .p2 { flex-direction: column; padding: 60px; justify-content: center; align-items: center; gap: 24px; }
+  .p2 .lockup { display: flex; align-items: center; gap: 32px; }
+  .p2 .lockup img { width: 240px; height: 240px; }
+  .p2 .wordmark {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 200px;
+    line-height: 0.85;
+    color: var(--c-ink);
+    letter-spacing: -0.02em;
+  }
+  .p2 .th {
+    font-family: var(--font-th);
+    font-size: 52px;
+    line-height: 1;
+    color: var(--c-ink);
+  }
+  .p2 .hello {
+    font-family: var(--font-display);
+    font-size: 44px;
+    color: var(--c-ink-soft);
+    margin-top: 8px;
+  }
+
+  /* ============ POST 3 — Tagline ============ */
+  .p3 { flex-direction: column; padding: 80px 70px; justify-content: center; align-items: flex-start; }
+  .p3 .tag-block {
+    font-family: var(--font-display);
+    font-size: 134px;
+    line-height: 0.95;
+    color: var(--c-ink);
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .p3 .tag-block .accent { color: #C8851C; }
+  .p3 .meta {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--c-ink);
+    margin-top: 36px;
+  }
+  .p3 .sun-corner {
+    position: absolute; top: 60px; right: 60px;
+    width: 140px; height: 140px;
+    transform: rotate(-12deg);
+  }
+
+  /* ============ POST 4 — What we do ============ */
+  .p4 { flex-direction: column; padding: 56px; justify-content: space-between; }
+  .p4 h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 96px;
+    line-height: 0.95;
+    margin: 0 0 8px;
+    color: var(--c-ink);
+  }
+  .p4 .sub {
+    font-family: var(--font-th);
+    font-size: 28px;
+    color: var(--c-ink-soft);
+  }
+  .p4 .grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 32px 0;
+  }
+  .p4 .card {
+    background: var(--c-yellow);
+    border-radius: 24px;
+    padding: 24px 20px 28px;
+    text-align: center;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .p4 .card.b { background: var(--c-blue); }
+  .p4 .card.c { background: var(--c-ink); color: var(--c-cream); }
+  .p4 .card .icon {
+    font-size: 72px;
+    line-height: 1;
+    margin-bottom: 8px;
+    font-family: var(--font-display);
+  }
+  .p4 .card .name { font-family: var(--font-display); font-size: 36px; line-height: 1; }
+  .p4 .card .name-th { font-family: var(--font-th); font-size: 18px; margin-top: 4px; opacity: 0.7; }
+
+  /* ============ POST 5 — Milk tea ============ */
+  .p5 { padding: 56px; align-items: center; }
+  .p5 .left { flex: 1; }
+  .p5 h2 {
+    font-family: var(--font-display);
+    font-size: 132px;
+    line-height: 0.9;
+    margin: 0;
+    color: var(--c-ink);
+  }
+  .p5 .th {
+    font-family: var(--font-th);
+    font-size: 28px;
+    color: var(--c-ink);
+    margin-top: 4px;
+  }
+  .p5 .flavors {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .p5 .flavor {
+    display: flex; justify-content: space-between;
+    border-top: 1px dashed rgba(61,64,91,0.4);
+    padding: 10px 0;
+    align-items: baseline;
+  }
+  .p5 .flavor:first-child { border-top: none; }
+  .p5 .flavor b { font-family: var(--font-display); font-size: 32px; line-height: 1; font-weight: 500; }
+  .p5 .flavor .price { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.12em; }
+  .p5 .right { width: 360px; height: 100%; display: flex; align-items: center; justify-content: center; }
+
+  /* Milk tea bottle illustration */
+  .bottle-ill {
+    position: relative;
+    width: 240px;
+    height: 480px;
+    filter: drop-shadow(0 20px 40px rgba(61,64,91,0.18));
+  }
+  .bottle-ill .cap { width: 100px; height: 50px; background: var(--c-ink); margin: 0 auto; border-radius: 6px 6px 4px 4px; }
+  .bottle-ill .neck { width: 120px; height: 24px; background: #E9F0F4; margin: 0 auto; }
+  .bottle-ill .shoulder { width: 120px; height: 60px; background: #F5FAFC; margin: 0 auto;
+    border-radius: 0 0 100px 100px / 0 0 60px 60px; border: 1px solid rgba(61,64,91,0.18); border-top: none; }
+  .bottle-ill .body { width: 240px; height: 290px; margin: 0 auto;
+    background: linear-gradient(90deg, #DDE8ED 0%, #F5FAFC 30%, #F5FAFC 70%, #DDE8ED 100%);
+    border: 1px solid rgba(61,64,91,0.18); border-top: none; position: relative; overflow: hidden; }
+  .bottle-ill .liquid {
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, #9B7350 0%, #C29470 20%, #D6AE82 40%, #D6AE82 60%, #C29470 80%, #9B7350 100%);
+    opacity: 0.55;
+  }
+  .bottle-ill .label {
+    position: absolute; z-index: 2;
+    left: 50%; top: 40px; transform: translateX(-50%);
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: var(--c-yellow);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    box-shadow: 0 4px 8px rgba(61,64,91,0.15);
+    padding: 18px;
+    text-align: center;
+  }
+  .bottle-ill .label::before {
+    content: ""; position: absolute; inset: 8px; border: 1.5px dashed rgba(61,64,91,0.3); border-radius: 50%;
+  }
+  .bottle-ill .label img { width: 50px; height: 50px; }
+  .bottle-ill .label .b { font-family: var(--font-display); font-size: 32px; line-height: 0.9; margin-top: 4px; color: var(--c-ink); }
+  .bottle-ill .label .s { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; background: var(--c-ink); color: var(--c-cream); padding: 2px 8px; border-radius: 999px; margin-top: 6px; }
+  .bottle-ill .base { width: 240px; height: 56px; margin: 0 auto;
+    background: #C8D5DC; border-radius: 0 0 16px 16px;
+    border: 1px solid rgba(61,64,91,0.25); border-top: none; }
+
+  /* ============ POST 6 — Catering ============ */
+  .p6 { padding: 56px; flex-direction: column; justify-content: space-between; }
+  .p6 .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+  .p6 h2 {
+    font-family: var(--font-display);
+    font-size: 110px;
+    line-height: 0.9;
+    margin: 0;
+    color: var(--c-ink);
+  }
+  .p6 .th {
+    font-family: var(--font-th);
+    font-size: 24px;
+    color: var(--c-ink-soft);
+    margin-top: 6px;
+    max-width: 360px;
+    line-height: 1.3;
+  }
+  .p6 .stat {
+    text-align: right;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--c-ink-soft);
+    text-transform: uppercase;
+  }
+  .p6 .stat b {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 64px;
+    color: var(--c-ink);
+    line-height: 1;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .p6 .boxes { display: flex; gap: 24px; justify-content: center; padding: 0 20px; align-items: flex-end; }
+
+  /* Bento box illustration */
+  .bento {
+    width: 240px;
+    position: relative;
+    filter: drop-shadow(0 16px 32px rgba(61,64,91,0.2));
+  }
+  .bento .lid { width: 100%; height: 40px; background: #D8B98A; border-radius: 8px 8px 0 0;
+    border: 1px solid rgba(61,64,91,0.3); position: relative; display: flex; align-items: center; justify-content: center; }
+  .bento .lid .sticker {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--c-yellow);
+    border: 1.5px solid var(--c-ink);
+    display: flex; align-items: center; justify-content: center;
+    position: absolute; top: -10px;
+  }
+  .bento .lid .sticker img { width: 70%; height: 70%; }
+  .bento .body { width: 100%; height: 180px; background: #E8C99A;
+    border: 1px solid rgba(61,64,91,0.3); border-top: none; padding: 20px;
+    display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; }
+  .bento .body .compartment { background: rgba(61,64,91,0.1); border-radius: 4px; position: relative; overflow: hidden; }
+  .bento .body .compartment.rice { background: #FFF8E8; }
+  .bento .body .compartment.veggie { background: #C8DCC0; }
+  .bento .body .compartment.meat { background: #C99464; grid-row: span 2; }
+
+  /* ============ POST 7 — Events ============ */
+  .p7 { padding: 56px; flex-direction: column; justify-content: space-between; }
+  .p7 h2 {
+    font-family: var(--font-display);
+    font-size: 156px;
+    line-height: 0.88;
+    margin: 0;
+    color: var(--c-ink);
+  }
+  .p7 .th {
+    font-family: var(--font-th);
+    font-size: 28px;
+    line-height: 1.2;
+    color: var(--c-ink);
+    margin-top: 12px;
+    max-width: 600px;
+  }
+  .p7 .tags { display: flex; flex-wrap: wrap; gap: 12px; }
+  .p7 .tag {
+    background: var(--c-cream);
+    color: var(--c-ink);
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-size: 32px;
+    line-height: 1;
+  }
+  .p7 .tag.ink { background: var(--c-ink); color: var(--c-cream); }
+  .p7 .number {
+    font-family: var(--font-display);
+    font-size: 240px;
+    line-height: 0.85;
+    color: var(--c-ink);
+    text-align: right;
+    letter-spacing: -0.04em;
+  }
+  .p7 .number .small { font-size: 64px; vertical-align: middle; }
+  .p7 .row { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; }
+
+  /* ============ POST 8 — Launch offer ============ */
+  .p8 { padding: 70px; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 16px; position: relative; }
+  .p8 .kicker {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.32em;
+    color: var(--c-yellow);
+    text-transform: uppercase;
+  }
+  .p8 .big {
+    font-family: var(--font-display);
+    font-size: 380px;
+    line-height: 0.82;
+    color: var(--c-yellow);
+    letter-spacing: -0.04em;
+  }
+  .p8 .big .pct { font-size: 200px; vertical-align: top; }
+  .p8 h2 {
+    font-family: var(--font-display);
+    font-size: 76px;
+    line-height: 0.9;
+    margin: 0;
+    color: var(--c-cream);
+  }
+  .p8 .th {
+    font-family: var(--font-th);
+    font-size: 26px;
+    color: rgba(255,249,230,0.8);
+    line-height: 1.2;
+  }
+  .p8 .code {
+    margin-top: 16px;
+    padding: 14px 28px;
+    border: 2px dashed var(--c-yellow);
+    border-radius: 12px;
+    font-family: var(--font-mono);
+    font-size: 22px;
+    letter-spacing: 0.24em;
+    color: var(--c-yellow);
+    text-transform: uppercase;
+  }
+  .p8 .deco-suns { position: absolute; opacity: 0.1; pointer-events: none; }
+  .p8 .deco-1 { top: -40px; left: -40px; width: 200px; transform: rotate(-15deg); }
+  .p8 .deco-2 { bottom: -40px; right: -40px; width: 240px; transform: rotate(20deg); }
+
+  /* ============ POST 9 — Contact ============ */
+  .p9 { padding: 60px; flex-direction: column; justify-content: space-between; }
+  .p9 .top { display: flex; align-items: center; gap: 24px; }
+  .p9 .top img { width: 140px; height: 140px; }
+  .p9 .top h2 {
+    font-family: var(--font-display);
+    font-size: 110px;
+    line-height: 0.9;
+    margin: 0;
+    color: var(--c-ink);
+  }
+  .p9 .top .th {
+    font-family: var(--font-th);
+    font-size: 22px;
+    color: var(--c-ink-soft);
+    margin-top: 4px;
+  }
+  .p9 .channels { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .p9 .ch {
+    background: var(--c-yellow);
+    padding: 24px 28px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .p9 .ch.b { background: var(--c-blue); }
+  .p9 .ch.i { background: var(--c-ink); color: var(--c-cream); }
+  .p9 .ch.c { background: var(--c-cream); border: 1px solid rgba(61,64,91,0.2); }
+  .p9 .ch .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.6; }
+  .p9 .ch .val { font-family: var(--font-display); font-size: 44px; line-height: 0.95; letter-spacing: -0.01em; }
+  .p9 .ch .val.small { font-size: 32px; }
+  .p9 .cta {
+    background: var(--c-ink);
+    color: var(--c-cream);
+    padding: 24px 32px;
+    border-radius: 20px;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 52px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  /* ============ Profile grid preview ============ */
+  .phone {
+    width: 100%; height: 100%;
+    background: linear-gradient(180deg, var(--c-paper) 0%, #FFEDB8 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 32px 24px;
+    overflow: hidden;
+  }
+  .phone-frame {
+    width: 380px;
+    background: white;
+    border-radius: 36px;
+    border: 8px solid var(--c-ink);
+    overflow: hidden;
+    box-shadow: 0 30px 60px -20px rgba(61,64,91,0.3);
+    display: flex; flex-direction: column;
+  }
+  .phone-status {
+    background: white;
+    padding: 16px 24px 8px;
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--c-ink);
+  }
+  .phone-header {
+    padding: 16px 16px 0;
+    display: flex; align-items: flex-start; gap: 18px;
+  }
+  .phone-header .avatar {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--c-yellow);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    border: 2px solid var(--c-cream);
+  }
+  .phone-header .avatar img { width: 70%; height: 70%; }
+  .phone-header .meta { flex: 1; font-size: 12px; }
+  .phone-header .handle {
+    font-family: var(--font-body); font-weight: 700;
+    font-size: 15px; line-height: 1;
+  }
+  .phone-header .stats {
+    display: flex; gap: 16px;
+    margin-top: 4px;
+    color: var(--c-ink-soft);
+  }
+  .phone-header .stats b { color: var(--c-ink); font-weight: 700; }
+  .phone-bio {
+    padding: 8px 16px 0;
+    font-size: 11px;
+    line-height: 1.45;
+  }
+  .phone-bio .name { font-weight: 700; }
+  .phone-bio .ig-h { color: #2A5C8F; }
+  .phone-actions {
+    padding: 10px 16px 12px;
+    display: flex; gap: 6px;
+  }
+  .phone-actions button {
+    flex: 1;
+    background: var(--c-blue);
+    border: none;
+    border-radius: 6px;
+    padding: 6px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--c-ink);
+  }
+  .phone-actions button.ghost { background: #f0f0f0; }
+  .phone-tabs {
+    display: flex;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    height: 36px;
+  }
+  .phone-tabs .tab {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    color: var(--c-ink-soft);
+  }
+  .phone-tabs .tab.active { color: var(--c-ink); border-bottom: 2px solid var(--c-ink); }
+  .phone-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    padding: 2px;
+  }
+  .phone-grid .cell {
+    aspect-ratio: 1;
+    overflow: hidden;
+    position: relative;
+  }
+  .phone-grid .cell > div { width: 100%; height: 100%; transform-origin: top left; }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="design-canvas.jsx"></script>
+
+<script type="text/babel">
+
+const Sun = ({ color = 'ink', style = {} }) =>
+<img src={`assets/sun-mark-${color}.png`} alt=""
+draggable={false}
+style={{ display: 'block', ...style, width: "50px", height: "50px" }} />;
+
+
+const Stamp = ({ dark }) =>
+<div className="stamp">
+      <Sun color={dark ? 'cream' : 'ink'} />
+      <span style={{ fontSize: "20px" }}>sunsan · ซันซัง</span>
+      <span style={{ opacity: 0.5 }}>·</span>
+      <span style={{ fontSize: "20px" }}>@SUNSANCATERING</span>
+    </div>;
+
+
+// ============ Post 1 — Teaser ============
+const Post1 = () =>
+<div className="post bg-yellow p1">
+      <div className="index">1</div>
+      <Sun color="ink" style={{ width: 480, height: 480 }} />
+      <div className="coming" style={{ fontSize: "70px" }}>something sunny<br />is coming.</div>
+      <div className="date">25 · 05 · 2026</div>
+      <Stamp />
+    </div>;
+
+
+// ============ Post 2 — Name reveal ============
+const Post2 = () =>
+<div className="post bg-cream p2">
+      <div className="index">2</div>
+      <div className="lockup">
+        <Sun color="ink" style={{ width: 240, height: 240 }} />
+        <div>
+          <div className="wordmark">sunsan</div>
+          <div className="th">ซันซัง</div>
+        </div>
+      </div>
+      <div className="hello" style={{ fontSize: "60px" }}>hello, sunshine.</div>
+      <Stamp />
+    </div>;
+
+
+// ============ Post 3 — Tagline ============
+const Post3 = () =>
+<div className="post bg-blue p3">
+      <div className="index">3</div>
+      <Sun color="ink" style={{ width: 140, height: 140, position: 'absolute', top: 60, right: 60, transform: 'rotate(-8deg)' }} />
+      <div className="tag-block">
+        a little<br />
+        <span className="accent">sunshine</span><br />
+        for every<br />
+        gathering.
+      </div>
+      <div className="meta" style={{ fontSize: "20px" }}>CATERING · FOOD · DRINKS</div>
+      <Stamp />
+    </div>;
+
+
+// ============ Post 4 — What we do ============
+const Post4 = () =>
+<div className="post bg-cream p4">
+      <div className="index">4</div>
+      <div>
+        <h2>what we make.</h2>
+        <div className="sub">อาหาร · เครื่องดื่ม · สำหรับทุกอีเวนท์</div>
+      </div>
+      <div className="grid3">
+        <div className="card">
+          <Sun color="ink" style={{ width: 64, height: 64, marginBottom: 8 }} />
+          <div className="name">bento</div>
+          <div className="name-th">ข้าวกล่อง</div>
+        </div>
+        <div className="card b">
+          <Sun color="ink" style={{ width: 64, height: 64, marginBottom: 8 }} />
+          <div className="name">milk tea</div>
+          <div className="name-th">ชานม</div>
+        </div>
+        <div className="card c">
+          <Sun color="cream" style={{ width: 64, height: 64, marginBottom: 8 }} />
+          <div className="name">water</div>
+          <div className="name-th">น้ำดื่ม</div>
+        </div>
+      </div>
+      <div style={{ textAlign: 'center', fontFamily: 'var(--font-display)', fontSize: 32, color: 'var(--c-ink-soft)' }}>
+        ส่งทั้งกรุงเทพ · จัดส่งหน้างาน
+      </div>
+      <Stamp />
+    </div>;
+
+
+// ============ Post 5 — Milk tea ============
+const Post5 = () =>
+<div className="post bg-yellow p5">
+      <div className="index">5</div>
+      <div className="left">
+        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--c-ink)' }}>
+          fresh daily · no preservatives
+        </div>
+        <h2 style={{ marginTop: 12 }}>milk tea<br />by the bottle.</h2>
+        <div className="th">ชานมสด ใหม่ทุกเช้า · ขวด 1 ลิตร</div>
+        <div className="flavors">
+          <div className="flavor"><b>classic</b><div className="price">฿85 / 1L</div></div>
+          <div className="flavor"><b>okinawa</b><div className="price">฿95 / 1L</div></div>
+          <div className="flavor"><b>matcha latte</b><div className="price">฿105 / 1L</div></div>
+          <div className="flavor"><b>brown sugar</b><div className="price">฿95 / 1L</div></div>
+        </div>
+      </div>
+      <div className="right">
+        <div className="bottle-ill">
+          <div className="cap" />
+          <div className="neck" />
+          <div className="shoulder" />
+          <div className="body">
+            <div className="liquid" />
+            <div className="label">
+              <Sun color="ink" />
+              <div className="b">sunsan</div>
+              <div className="s">1L · MILK TEA</div>
+            </div>
+          </div>
+          <div className="base" />
+        </div>
+      </div>
+      <Stamp />
+    </div>;
+
+
+// ============ Post 6 — Catering ============
+const Post6 = () =>
+<div className="post bg-cream p6">
+      <div className="index">6</div>
+      <div className="top">
+        <div>
+          <h2>bento sets<br />for every<br />gathering.</h2>
+          <div className="th">ข้าวกล่องอบอุ่น · 4 เซ็ตให้เลือก · ขั้นต่ำ 20 กล่อง</div>
+        </div>
+        <div className="stat">
+          <b>20+</b>
+          minimum<br />order
+        </div>
+      </div>
+      <div className="boxes">
+        <div className="bento">
+          <div className="lid">
+            <div className="sticker"><Sun color="ink" /></div>
+          </div>
+          <div className="body">
+            <div className="compartment rice" />
+            <div className="compartment meat" />
+            <div className="compartment veggie" />
+          </div>
+        </div>
+        <div className="bento" style={{ width: 200, transform: 'translateY(20px)' }}>
+          <div className="lid">
+            <div className="sticker"><Sun color="ink" /></div>
+          </div>
+          <div className="body" style={{ height: 160 }}>
+            <div className="compartment rice" />
+            <div className="compartment meat" />
+            <div className="compartment veggie" />
+          </div>
+        </div>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', borderTop: '1px dashed rgba(61,64,91,0.3)', paddingTop: 20 }}>
+        <div style={{ fontFamily: 'var(--font-display)', fontSize: 36, color: 'var(--c-ink)' }}>set A · ฿120 · 6 items</div>
+        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.18em', color: 'var(--c-ink-soft)' }}>SETS · A · B · C · D</div>
+      </div>
+      <Stamp />
+    </div>;
+
+
+// ============ Post 7 — Events ============
+const Post7 = () =>
+<div className="post bg-blue p7">
+      <div className="index">7</div>
+      <div>
+        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--c-ink)' }}>
+          we handle the food · you handle the fun
+        </div>
+        <h2 style={{ marginTop: 16 }}>events · ขนาดไหน<br />เราจัดให้.</h2>
+      </div>
+      <div className="row">
+        <div className="tags">
+          <span className="tag">weddings</span>
+          <span className="tag">meetings</span>
+          <span className="tag ink">parties</span>
+          <span className="tag">launches</span>
+          <span className="tag">conferences</span>
+          <span className="tag ink">popups</span>
+        </div>
+      </div>
+      <div className="row">
+        <div className="th">
+          ตั้งแต่ 10 ถึง 500 คน. <br />เราดูแลตั้งแต่อาหาร เครื่องดื่ม จัดส่ง ถึงจัดวาง.
+        </div>
+        <div className="number">10–500<span className="small"> คน</span></div>
+      </div>
+      <Stamp />
+    </div>;
+
+
+// ============ Post 8 — Launch offer ============
+const Post8 = () =>
+<div className="post bg-ink p8">
+      <div className="index">8</div>
+      <Sun color="yellow" style={{ width: 200, position: 'absolute', top: -40, left: -40, transform: 'rotate(-15deg)', opacity: 0.12 }} />
+      <Sun color="yellow" style={{ width: 240, position: 'absolute', bottom: -40, right: -40, transform: 'rotate(20deg)', opacity: 0.12 }} />
+
+      <div className="kicker">launch offer · เปิดร้าน</div>
+      <div className="big">
+        15<span className="pct">%</span>
+      </div>
+      <h2 style={{ marginTop: 0 }}>ลดเปิดร้าน 15%</h2>
+      <div className="th">สั่งครั้งแรก ลด 15% · สั่งก่อน 30 มิ.ย.<br />ใช้ได้กับ catering ทุกเซ็ต + ชานม 5 ขวดขึ้นไป</div>
+      <div className="code">code · SUNSHINE15</div>
+      <Stamp dark />
+    </div>;
+
+
+// ============ Post 9 — Contact CTA ============
+const Post9 = () =>
+<div className="post bg-cream p9">
+      <div className="index">9</div>
+      <div className="top">
+        <Sun color="ink" />
+        <div>
+          <h2>open for<br />orders.</h2>
+          <div className="th">เปิดรับออเดอร์แล้ว · DM หรือโทร</div>
+        </div>
+      </div>
+      <div className="channels">
+        <div className="ch">
+          <div className="lbl">Instagram</div>
+          <div className="val">@sunsan.catering</div>
+        </div>
+        <div className="ch b">
+          <div className="lbl">Line</div>
+          <div className="val">@sunsan</div>
+        </div>
+        <div className="ch i">
+          <div className="lbl">Phone</div>
+          <div className="val">081 234 5678</div>
+        </div>
+        <div className="ch c">
+          <div className="lbl">Hours</div>
+          <div className="val small">7:00 – 18:00<br />ทุกวัน</div>
+        </div>
+      </div>
+      <div className="cta">DM "อยากสั่ง" — เราตอบใน 30 นาที</div>
+      <Stamp />
+    </div>;
+
+
+// ============ IG Profile grid preview ============
+// Renders an iPhone-style profile feed with all 9 posts in 3x3.
+// Each cell uses CSS scale() to fit the full 1080-design into a small thumbnail.
+const PostThumb = ({ index, Comp }) =>
+<div className="cell">
+      <div style={{
+    width: 1080, height: 1080,
+    transform: 'scale(0.108)',
+    transformOrigin: 'top left'
+  }}>
+        <Comp />
+      </div>
+    </div>;
+
+
+const ProfilePreview = () =>
+<div className="phone">
+      <div className="phone-frame">
+        <div className="phone-status">
+          <span>9:41</span>
+          <span>5G ▮▮▮</span>
+        </div>
+        <div className="phone-header">
+          <div className="avatar"><Sun color="ink" /></div>
+          <div className="meta">
+            <div className="handle">sunsan.catering</div>
+            <div className="stats"><span><b>9</b> posts</span><span><b>1.2k</b> followers</span><span><b>318</b> following</span></div>
+          </div>
+        </div>
+        <div className="phone-bio">
+          <div className="name">SunSan · ซันซัง</div>
+          <div>a little sunshine for every gathering ☀️</div>
+          <div>catering · milk tea · water · events</div>
+          <div className="ig-h">linktr.ee/sunsan</div>
+        </div>
+        <div className="phone-actions">
+          <button>Follow</button>
+          <button className="ghost">Message</button>
+          <button className="ghost">▾</button>
+        </div>
+        <div className="phone-tabs">
+          <div className="tab active">▦</div>
+          <div className="tab">▤</div>
+          <div className="tab">⊙</div>
+        </div>
+        <div className="phone-grid">
+          <PostThumb Comp={Post1} />
+          <PostThumb Comp={Post2} />
+          <PostThumb Comp={Post3} />
+          <PostThumb Comp={Post4} />
+          <PostThumb Comp={Post5} />
+          <PostThumb Comp={Post6} />
+          <PostThumb Comp={Post7} />
+          <PostThumb Comp={Post8} />
+          <PostThumb Comp={Post9} />
+        </div>
+      </div>
+    </div>;
+
+
+// ============ App ============
+function App() {
+  return (
+    <DesignCanvas
+      title="SunSan · Launch posts"
+      subtitle="9 ตอนสำหรับเปิดตัวแบรนด์ · พร้อม Instagram grid preview">
+      
+        <DCSection id="preview" title="Profile grid preview" subtitle="หน้าโปรไฟล์ Instagram ที่ผู้ติดตามจะเห็น">
+          <DCArtboard id="ig-profile" label="@sunsan.catering · profile feed" width={500} height={780}>
+            <ProfilePreview />
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection id="opening" title="Opening trio · 1–3" subtitle="teaser → name → tagline">
+          <DCArtboard id="post-1" label="01 · Teaser ☀️ coming soon" width={1080} height={1080}>
+            <Post1 />
+          </DCArtboard>
+          <DCArtboard id="post-2" label="02 · Name reveal" width={1080} height={1080}>
+            <Post2 />
+          </DCArtboard>
+          <DCArtboard id="post-3" label="03 · Tagline" width={1080} height={1080}>
+            <Post3 />
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection id="products" title="Products · 4–6" subtitle="what we sell">
+          <DCArtboard id="post-4" label="04 · What we make" width={1080} height={1080}>
+            <Post4 />
+          </DCArtboard>
+          <DCArtboard id="post-5" label="05 · Milk tea" width={1080} height={1080}>
+            <Post5 />
+          </DCArtboard>
+          <DCArtboard id="post-6" label="06 · Catering" width={1080} height={1080}>
+            <Post6 />
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection id="cta" title="Action · 7–9" subtitle="events · launch offer · contact">
+          <DCArtboard id="post-7" label="07 · For events" width={1080} height={1080}>
+            <Post7 />
+          </DCArtboard>
+          <DCArtboard id="post-8" label="08 · Launch offer" width={1080} height={1080}>
+            <Post8 />
+          </DCArtboard>
+          <DCArtboard id="post-9" label="09 · Open for orders" width={1080} height={1080}>
+            <Post9 />
+          </DCArtboard>
+        </DCSection>
+      </DesignCanvas>);
+
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+</body>
+</html>

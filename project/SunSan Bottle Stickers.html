@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<title>SunSan · ฉลากขวดชานม 1L</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Mali:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  :root {
+    --c-yellow: #FCE38A;
+    --c-yellow-soft: #FFEEB0;
+    --c-blue: #A8D8EA;
+    --c-blue-soft: #CCE9F3;
+    --c-cream: #FFF9E6;
+    --c-paper: #FFFCEF;
+    --c-ink: #3D405B;
+    --c-ink-soft: #6B6E89;
+    --c-peach: #FFD3B6;
+    --font-display: "Caveat", cursive;
+    --font-th: "Mali", cursive;
+    --font-body: "Nunito", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); background: var(--c-paper); color: var(--c-ink); }
+  img { display: block; }
+  .mono { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--c-ink-soft); }
+
+  /* ============ Bottle mockup ============ */
+  .bottle-stage {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(180deg, #FFFCEF 0%, #FFF1D1 100%);
+    padding: 20px;
+  }
+  .bottle {
+    position: relative;
+    width: 220px;
+    filter: drop-shadow(0 30px 40px rgba(61,64,91,0.18));
+  }
+  .bottle .cap { width: 90px; height: 50px; background: #3D405B; margin: 0 auto;
+    border-radius: 6px 6px 4px 4px; border-top: 2px solid #5a5d75; position: relative; }
+  .bottle .cap::before, .bottle .cap::after { content: ""; position: absolute; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.18); }
+  .bottle .cap::before { top: 12px; } .bottle .cap::after { top: 22px; }
+  .bottle .cap-sticker-pos {
+    position: absolute; left: 50%; top: 8px; transform: translateX(-50%);
+    width: 40px; height: 40px; border-radius: 50%; overflow: hidden; z-index: 5;
+  }
+  .bottle .neck { width: 110px; height: 30px; background: #E9F0F4; margin: 0 auto;
+    border-left: 1px solid rgba(61,64,91,0.2); border-right: 1px solid rgba(61,64,91,0.2); }
+  .bottle .shoulder { width: 110px; height: 80px; margin: 0 auto;
+    background: #F5FAFC; border-radius: 0 0 90px 90px / 0 0 80px 80px;
+    border: 1px solid rgba(61,64,91,0.18); border-top: none; }
+  .bottle .body {
+    width: 220px; height: 360px;
+    background: linear-gradient(90deg, #DDE8ED 0%, #F5FAFC 30%, #F5FAFC 70%, #DDE8ED 100%);
+    margin: 0 auto;
+    border: 1px solid rgba(61,64,91,0.2); border-top: none;
+    position: relative; overflow: hidden;
+  }
+  .bottle .liquid {
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, #9B7350 0%, #C29470 20%, #D6AE82 40%, #D6AE82 60%, #C29470 80%, #9B7350 100%);
+    opacity: 0.55; z-index: 0;
+  }
+  .bottle .base { width: 220px; height: 50px; margin: 0 auto;
+    background: #C8D5DC; border-radius: 0 0 16px 16px;
+    border: 1px solid rgba(61,64,91,0.25); border-top: none; }
+  .bottle .label-on {
+    position: absolute; z-index: 2;
+    left: 50%; transform: translateX(-50%);
+    top: 30px;
+    width: 200px; height: 290px;
+    border-radius: 4px; overflow: hidden;
+    box-shadow: inset 0 0 0 1px rgba(61,64,91,0.18);
+  }
+  .bottle .label-circle {
+    position: absolute; z-index: 2;
+    left: 50%; transform: translateX(-50%);
+    top: 80px;
+    width: 170px; height: 170px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(61,64,91,0.15);
+  }
+  .bottle .label-strip {
+    position: absolute; z-index: 2;
+    left: 50%; transform: translateX(-50%);
+    top: 30px;
+    width: 60px; height: 290px;
+    border-radius: 4px; overflow: hidden;
+    box-shadow: inset 0 0 0 1px rgba(61,64,91,0.18);
+  }
+
+  /* ============ Compact label-on-bottle designs ============ */
+  /* Wraparound on bottle (just shows visible front strip) */
+  .lb-wrap {
+    width: 100%; height: 100%;
+    background: var(--c-yellow);
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+    padding: 18px 14px;
+    text-align: center;
+  }
+  .lb-wrap .sun { width: 56px; height: 56px; }
+  .lb-wrap .brand { font-family: var(--font-display); font-weight: 500; font-size: 36px; line-height: 0.9; }
+  .lb-wrap .th { font-family: var(--font-th); font-size: 11px; line-height: 1; }
+  .lb-wrap .product { font-family: var(--font-display); font-size: 22px; line-height: 1; }
+  .lb-wrap .product-th { font-family: var(--font-th); font-size: 11px; color: var(--c-ink-soft); }
+  .lb-wrap .size-pill {
+    font-family: var(--font-display); font-size: 22px; line-height: 1; padding: 2px 12px;
+    background: var(--c-ink); color: var(--c-cream); border-radius: 999px;
+  }
+  .lb-wrap hr { width: 32px; border: none; border-top: 1px dashed rgba(61,64,91,0.4); margin: 4px 0; }
+
+  /* Circle label on bottle (170×170) */
+  .lb-circle {
+    width: 100%; height: 100%; border-radius: 50%;
+    background: var(--c-yellow);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 16px; text-align: center; position: relative;
+  }
+  .lb-circle::before {
+    content: ""; position: absolute; inset: 6px; border: 1.5px dashed rgba(61,64,91,0.3); border-radius: 50%;
+  }
+  .lb-circle .sun { width: 40px; height: 40px; }
+  .lb-circle .brand { font-family: var(--font-display); font-size: 28px; line-height: 0.9; margin-top: 2px; }
+  .lb-circle .product { font-family: var(--font-display); font-size: 14px; line-height: 1; margin-top: 4px; }
+  .lb-circle .size { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; margin-top: 4px; background: var(--c-ink); color: var(--c-cream); padding: 2px 8px; border-radius: 999px; }
+
+  /* Vertical strip label on bottle */
+  .lb-strip {
+    width: 100%; height: 100%;
+    background: var(--c-blue);
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+    padding: 16px 6px; text-align: center;
+  }
+  .lb-strip .sun { width: 36px; height: 36px; }
+  .lb-strip .brand-v {
+    writing-mode: vertical-rl; transform: rotate(180deg);
+    font-family: var(--font-display); font-size: 28px; line-height: 1;
+    letter-spacing: 0.04em;
+  }
+  .lb-strip .size { font-family: var(--font-display); font-size: 22px; line-height: 1; }
+
+  /* ============ Standalone stickers ============ */
+  /* A · Wraparound (800×300) — full label flattened out */
+  .wrap-stage { padding: 24px; height: 100%; display: flex; align-items: center; justify-content: center;
+    background: #F4ECDA; }
+  .wrap {
+    width: 100%; height: 100%;
+    background: var(--c-yellow);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1.1fr;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -20px rgba(61,64,91,0.3);
+  }
+  .wrap .panel { padding: 22px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+  .wrap .panel + .panel { border-left: 1px dashed rgba(61,64,91,0.35); }
+  .wrap .center { background: var(--c-cream); text-align: center; align-items: center; }
+  .wrap .label-tag { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--c-ink-soft); }
+  .wrap .label-tag b { color: var(--c-ink); }
+  .wrap .ingredients { font-size: 10px; line-height: 1.5; color: var(--c-ink-soft); margin-top: 12px; }
+  .wrap .ingredients b { color: var(--c-ink); display: block; }
+  .wrap .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .wrap .tag {
+    background: var(--c-ink); color: var(--c-cream); font-family: var(--font-mono);
+    font-size: 9px; padding: 4px 10px; border-radius: 999px; letter-spacing: 0.1em; text-transform: uppercase;
+    line-height: 1;
+  }
+  .wrap .stamp { width: 86px; height: 86px; margin: 4px auto; }
+  .wrap .brand { font-family: var(--font-display); font-size: 50px; line-height: 0.9; }
+  .wrap .brand-th { font-family: var(--font-th); font-size: 16px; line-height: 1; }
+  .wrap .tagline { font-family: var(--font-display); font-size: 18px; color: var(--c-ink-soft); margin-top: 4px; }
+  .wrap .right { align-items: flex-end; text-align: right; }
+  .wrap .right .product { font-family: var(--font-display); font-size: 36px; line-height: 0.9; white-space: nowrap; }
+  .wrap .right .product-th { font-family: var(--font-th); font-size: 13px; line-height: 1.2; margin-top: 4px; }
+  .wrap .size-pill {
+    font-family: var(--font-display); font-size: 28px; line-height: 1;
+    background: var(--c-blue); color: var(--c-ink);
+    padding: 3px 14px; border-radius: 999px;
+    display: inline-block; margin-top: 8px;
+  }
+
+  /* B · Front circle (420×420 artboard, sticker ~340 diameter) */
+  .circ-stage { height: 100%; display: flex; align-items: center; justify-content: center; padding: 32px; }
+  .circ-stage.yellow-bg { background: var(--c-yellow-soft); }
+  .circ-stage.blue-bg { background: var(--c-blue-soft); }
+  .circle {
+    width: 340px; height: 340px;
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 32px;
+    position: relative;
+    filter: drop-shadow(0 14px 30px rgba(61,64,91,0.18));
+  }
+  .circle::before {
+    content: ""; position: absolute; inset: 16px;
+    border: 1.5px dashed rgba(61,64,91,0.3); border-radius: 50%;
+  }
+  .circle.yellow { background: var(--c-yellow); }
+  .circle.blue { background: var(--c-blue); }
+  .circle .sun { width: 60px; height: 60px; margin-bottom: 4px; }
+  .circle .brand { font-family: var(--font-display); font-size: 44px; line-height: 0.9; }
+  .circle .brand-th { font-family: var(--font-th); font-size: 12px; line-height: 1; color: var(--c-ink-soft); }
+  .circle .divider { width: 36px; border: none; border-top: 1px solid rgba(61,64,91,0.3); margin: 8px 0; }
+  .circle .product { font-family: var(--font-display); font-size: 24px; line-height: 1; white-space: nowrap; }
+  .circle .product-th { font-family: var(--font-th); font-size: 12px; color: var(--c-ink-soft); margin-top: 2px; }
+  .circle .size {
+    margin-top: 10px;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    background: var(--c-ink); color: var(--c-cream);
+    padding: 4px 12px; border-radius: 999px;
+  }
+
+  /* C · Vertical strip (300×620 artboard) */
+  .strip-stage { height: 100%; display: flex; align-items: center; justify-content: center; background: var(--c-blue-soft); padding: 32px 0; }
+  .strip {
+    width: 110px; height: 540px;
+    background: var(--c-blue);
+    border-radius: 6px;
+    padding: 18px 10px;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+    text-align: center;
+    filter: drop-shadow(0 16px 28px rgba(61,64,91,0.18));
+  }
+  .strip .sun { width: 60px; height: 60px; }
+  .strip .brand { font-family: var(--font-display); font-size: 32px; line-height: 0.9; }
+  .strip .brand-th { font-family: var(--font-th); font-size: 11px; line-height: 1; }
+  .strip .product-vert {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: var(--font-display); font-size: 28px; line-height: 1;
+    letter-spacing: 0.04em;
+    height: 220px; display: flex; align-items: center; justify-content: center;
+  }
+  .strip .size {
+    font-family: var(--font-display); font-size: 30px; line-height: 1;
+    background: var(--c-ink); color: var(--c-cream);
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* D · Cap stickers (620×260, three small circles) */
+  .cap-stage { height: 100%; padding: 30px; background: var(--c-cream);
+    display: flex; align-items: center; justify-content: space-around; }
+  .cap-disc {
+    width: 130px; height: 130px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    filter: drop-shadow(0 8px 16px rgba(61,64,91,0.2));
+    position: relative;
+  }
+  .cap-disc::before { content: ""; position: absolute; inset: 8px; border: 1.5px dashed rgba(61,64,91,0.25); border-radius: 50%; }
+  .cap-disc.y { background: var(--c-yellow); }
+  .cap-disc.b { background: var(--c-blue); }
+  .cap-disc.i { background: var(--c-ink); }
+  .cap-disc img { width: 80px; height: 80px; }
+  .cap-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; color: var(--c-ink-soft); margin-top: 12px; text-transform: uppercase; }
+
+  /* E · Flavor pack (820×260, 4 circles) */
+  .flavor-stage { height: 100%; padding: 24px; background: var(--c-cream);
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: center; }
+  .flavor {
+    aspect-ratio: 1 / 1; border-radius: 50%;
+    position: relative;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 14px;
+    filter: drop-shadow(0 8px 16px rgba(61,64,91,0.15));
+  }
+  .flavor::before { content: ""; position: absolute; inset: 8px; border: 1.5px dashed rgba(61,64,91,0.25); border-radius: 50%; pointer-events: none; }
+  .flavor .sun { width: 32px; height: 32px; opacity: 0.78; }
+  .flavor .brand { font-family: var(--font-display); font-size: 22px; line-height: 0.9; margin-top: 2px; }
+  .flavor .name { font-family: var(--font-th); font-size: 13px; line-height: 1.1; margin-top: 4px; }
+  .flavor .name-en { font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-ink-soft); margin-top: 4px; }
+  .flavor.classic { background: #F5D89B; }
+  .flavor.matcha { background: #C7DDB5; }
+  .flavor.okinawa { background: #E0B89B; }
+  .flavor.brown { background: #E89B7B; }
+
+  /* F · Neck hanger (300×420) */
+  .hanger-stage { height: 100%; padding: 24px; background: var(--c-yellow-soft);
+    display: flex; align-items: center; justify-content: center; }
+  .hanger {
+    width: 160px; height: 320px;
+    background: var(--c-cream);
+    border-radius: 14px;
+    padding: 18px 14px 16px;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center;
+    position: relative;
+    filter: drop-shadow(0 12px 22px rgba(61,64,91,0.2));
+  }
+  .hanger::before {
+    content: ""; position: absolute; left: 50%; top: 12px; transform: translateX(-50%);
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--c-yellow-soft);
+    border: 1.5px dashed var(--c-ink-soft);
+  }
+  .hanger .sun { width: 50px; height: 50px; margin-top: 38px; }
+  .hanger .brand { font-family: var(--font-display); font-size: 36px; line-height: 0.9; margin-top: 6px; }
+  .hanger .brand-th { font-family: var(--font-th); font-size: 11px; line-height: 1; color: var(--c-ink-soft); }
+  .hanger hr { width: 24px; border: none; border-top: 1px dashed rgba(61,64,91,0.35); margin: 10px 0; }
+  .hanger .msg { font-family: var(--font-display); font-size: 22px; line-height: 1.05; }
+  .hanger .msg-th { font-family: var(--font-th); font-size: 11px; line-height: 1.3; color: var(--c-ink-soft); margin-top: 2px; }
+  .hanger .price {
+    font-family: var(--font-display); font-size: 22px;
+    background: var(--c-yellow);
+    padding: 4px 14px; border-radius: 999px;
+    margin-top: auto;
+  }
+
+  /* Print sheet */
+  .print-stage { background: white; padding: 24px; height: 100%; display: flex; flex-direction: column; }
+  .print-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 14px; padding: 12px; border: 1px dashed rgba(61,64,91,0.35);
+  }
+  .print-cell {
+    aspect-ratio: 1; border-radius: 50%; position: relative;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 14px;
+    filter: drop-shadow(0 3px 6px rgba(61,64,91,0.1));
+  }
+  .print-cell::before { content: ""; position: absolute; inset: 6px; border: 1px dashed rgba(61,64,91,0.25); border-radius: 50%; pointer-events: none; }
+  .print-cell.y { background: var(--c-yellow); }
+  .print-cell.b { background: var(--c-blue); }
+  .print-cell.c { background: var(--c-cream); }
+  .print-cell .sun { width: 32px; height: 32px; }
+  .print-cell .brand { font-family: var(--font-display); font-size: 22px; line-height: 0.9; margin-top: 2px; }
+  .print-cell .product { font-family: var(--font-display); font-size: 14px; line-height: 1; margin-top: 2px; white-space: nowrap; }
+  .print-cell .size { font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.14em; background: var(--c-ink); color: var(--c-cream); padding: 2px 8px; border-radius: 999px; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="design-canvas.jsx"></script>
+
+<script type="text/babel">
+  const Sun = ({ color = 'ink', cls, style = {} }) => (
+    <img src={`assets/sun-mark-${color}.png`} alt=""
+         draggable={false}
+         className={cls}
+         style={{ display: 'block', ...style }}/>
+  );
+
+  // ============ Bottle mockup ============
+  const Bottle = ({ kind = 'wrap' }) => (
+    <div className="bottle-stage">
+      <div className="bottle">
+        <div className="cap"/>
+        <div className="cap-sticker-pos">
+          <div style={{width:'100%',height:'100%',background:'var(--c-yellow)',borderRadius:'50%',display:'flex',alignItems:'center',justifyContent:'center'}}>
+            <Sun color="ink" style={{width:'78%',height:'78%'}}/>
+          </div>
+        </div>
+        <div className="neck"/>
+        <div className="shoulder"/>
+        <div className="body">
+          <div className="liquid"/>
+
+          {kind === 'wrap' && (
+            <div className="label-on">
+              <div className="lb-wrap">
+                <div className="mono" style={{fontSize:8}}>EST. 2026 · BKK</div>
+                <Sun color="ink" cls="sun"/>
+                <div>
+                  <div className="brand">sunsan</div>
+                  <div className="th">ซันซัง</div>
+                </div>
+                <hr/>
+                <div>
+                  <div className="product">milk tea</div>
+                  <div className="product-th">ชานมไทย</div>
+                </div>
+                <div className="size-pill">1L</div>
+              </div>
+            </div>
+          )}
+
+          {kind === 'circle' && (
+            <div className="label-circle">
+              <div className="lb-circle">
+                <Sun color="ink" cls="sun"/>
+                <div className="brand">sunsan</div>
+                <div className="product">milk tea</div>
+                <div className="size">1000 ML</div>
+              </div>
+            </div>
+          )}
+
+          {kind === 'strip' && (
+            <div className="label-strip">
+              <div className="lb-strip">
+                <Sun color="ink" cls="sun"/>
+                <div className="brand-v">sunsan · milk tea</div>
+                <div className="size">1L</div>
+              </div>
+            </div>
+          )}
+        </div>
+        <div className="base"/>
+      </div>
+    </div>
+  );
+
+  // ============ A · Wraparound ============
+  const Wrap = () => (
+    <div className="wrap-stage">
+      <div className="wrap">
+        <div className="panel">
+          <div>
+            <div className="label-tag"><b>NET</b> 1000 ml · 1 L</div>
+            <div className="size-pill" style={{marginTop:8}}>fresh<br/>daily</div>
+          </div>
+          <div className="ingredients">
+            <b>ส่วนผสม:</b> ชาดำ, นมสด, นมข้นจืด, น้ำตาล.
+            <br/>
+            <b style={{marginTop:8}}>เก็บรักษา:</b> 0–4°C. ดื่มภายใน 24 ชม.หลังเปิด.
+          </div>
+          <div className="tags">
+            <span className="tag">no preserv.</span>
+            <span className="tag">handmade</span>
+          </div>
+        </div>
+
+        <div className="panel center">
+          <div className="label-tag">EST. 2026 · BKK</div>
+          <div className="stamp"><Sun color="ink" style={{width:'100%',height:'100%'}}/></div>
+          <div>
+            <div className="brand">sunsan</div>
+            <div className="brand-th">ซันซัง</div>
+          </div>
+          <div className="tagline">a little sunshine</div>
+        </div>
+
+        <div className="panel right">
+          <div className="label-tag"><b>FLAVOR</b></div>
+          <div>
+            <div className="product">milk&nbsp;tea</div>
+            <div className="product-th">ชานมไทย · สูตรเข้มข้น</div>
+            <div className="size-pill">1 L · 1000 ml</div>
+          </div>
+          <div style={{fontFamily:'var(--font-mono)', fontSize:9, letterSpacing:'0.14em', color:'var(--c-ink-soft)', lineHeight:1.6}}>
+            BATCH 26.05 · A12<br/>
+            @sunsan.catering<br/>
+            081 234 5678
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  // ============ B · Front circle ============
+  const Circle = ({ bg = 'yellow' }) => (
+    <div className={`circ-stage ${bg === 'blue' ? 'blue-bg' : 'yellow-bg'}`}>
+      <div className={`circle ${bg}`}>
+        <Sun color="ink" cls="sun"/>
+        <div className="brand">sunsan</div>
+        <div className="brand-th">ซันซัง · catering</div>
+        <hr className="divider"/>
+        <div className="product">milk&nbsp;tea</div>
+        <div className="product-th">ชานมไทย</div>
+        <div className="size">1000 ml · 1 L</div>
+      </div>
+    </div>
+  );
+
+  // ============ C · Vertical strip ============
+  const Strip = () => (
+    <div className="strip-stage">
+      <div className="strip">
+        <Sun color="ink" cls="sun"/>
+        <div>
+          <div className="brand">sunsan</div>
+          <div className="brand-th">ซันซัง</div>
+        </div>
+        <div className="product-vert">milk tea · 1 L</div>
+        <div className="size">1L</div>
+      </div>
+    </div>
+  );
+
+  // ============ D · Cap stickers ============
+  const Caps = () => (
+    <div className="cap-stage">
+      <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+        <div className="cap-disc y"><Sun color="ink"/></div>
+        <div className="cap-label">on yellow</div>
+      </div>
+      <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+        <div className="cap-disc b"><Sun color="ink"/></div>
+        <div className="cap-label">on blue</div>
+      </div>
+      <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+        <div className="cap-disc i"><Sun color="cream"/></div>
+        <div className="cap-label">on ink</div>
+      </div>
+    </div>
+  );
+
+  // ============ E · Flavor pack ============
+  const Flavors = () => {
+    const items = [
+      { cls: 'classic', th: 'ชานมไทย',    en: 'CLASSIC' },
+      { cls: 'matcha',  th: 'มัทฉะลาเต้',  en: 'MATCHA' },
+      { cls: 'okinawa', th: 'โอกินาวะ',    en: 'OKINAWA' },
+      { cls: 'brown',   th: 'น้ำตาลแดง',  en: 'BROWN SUGAR' },
+    ];
+    return (
+      <div className="flavor-stage">
+        {items.map((f) => (
+          <div key={f.cls} className={`flavor ${f.cls}`}>
+            <Sun color="ink" cls="sun"/>
+            <div className="brand">sunsan</div>
+            <div className="name">{f.th}</div>
+            <div className="name-en">{f.en}</div>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  // ============ F · Neck hanger ============
+  const Hanger = () => (
+    <div className="hanger-stage">
+      <div className="hanger">
+        <Sun color="ink" cls="sun"/>
+        <div className="brand">sunsan</div>
+        <div className="brand-th">ซันซัง · catering</div>
+        <hr/>
+        <div className="msg">today's<br/>sunshine</div>
+        <div className="msg-th">ชานมสดทุกเช้า</div>
+        <div className="price">฿85</div>
+      </div>
+    </div>
+  );
+
+  // ============ Print sheet ============
+  const PrintCell = ({ bg = 'y', flavor = 'milk tea' }) => (
+    <div className={`print-cell ${bg}`}>
+      <Sun color="ink" cls="sun"/>
+      <div className="brand">sunsan</div>
+      <div className="product">{flavor}</div>
+      <div className="size">1 L</div>
+    </div>
+  );
+  const PrintSheet = () => (
+    <div className="print-stage">
+      <div style={{display:'flex',justifyContent:'space-between',alignItems:'baseline',marginBottom:14}}>
+        <div className="mono">A4 · DIE-CUT · 80mm circles × 6up</div>
+        <div style={{fontFamily:'var(--font-display)', fontSize:18}}>sunsan</div>
+      </div>
+      <div className="print-grid">
+        <PrintCell bg="y" flavor="milk tea"/>
+        <PrintCell bg="y" flavor="matcha"/>
+        <PrintCell bg="b" flavor="okinawa"/>
+        <PrintCell bg="b" flavor="milk tea"/>
+        <PrintCell bg="c" flavor="matcha"/>
+        <PrintCell bg="y" flavor="okinawa"/>
+      </div>
+      <div className="mono" style={{marginTop:12, display:'flex', justifyContent:'space-between'}}>
+        <span>cut · CMYK · 300dpi · 3mm bleed</span>
+        <span>vinyl matte · waterproof</span>
+      </div>
+    </div>
+  );
+
+  // ============ App ============
+  function App() {
+    return (
+      <DesignCanvas
+        title="SunSan · ฉลากขวดชานม 1 ลิตร"
+        subtitle="6 ตัวเลือกฉลาก + bottle mockups + print sheet"
+      >
+        <DCSection id="bottles" title="On the bottle" subtitle="ดูแบบติดจริงบนขวด 1L · เปรียบเทียบทรงฉลาก">
+          <DCArtboard id="bottle-wrap"   label="Bottle · A · wraparound" width={300} height={700}>
+            <Bottle kind="wrap"/>
+          </DCArtboard>
+          <DCArtboard id="bottle-circle" label="Bottle · B · front circle" width={300} height={700}>
+            <Bottle kind="circle"/>
+          </DCArtboard>
+          <DCArtboard id="bottle-strip"  label="Bottle · C · vertical strip" width={300} height={700}>
+            <Bottle kind="strip"/>
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection id="designs" title="Sticker designs" subtitle="แบบฉลากต่างๆ ขนาดจริงตามที่ระบุ">
+          <DCArtboard id="wrap" label="A · Wraparound label · 240 × 90 mm" width={800} height={300}>
+            <Wrap/>
+          </DCArtboard>
+
+          <DCArtboard id="circle-yellow" label="B1 · Front circle · 80 mm · yellow" width={420} height={420}>
+            <Circle bg="yellow"/>
+          </DCArtboard>
+
+          <DCArtboard id="circle-blue" label="B2 · Front circle · 80 mm · blue" width={420} height={420}>
+            <Circle bg="blue"/>
+          </DCArtboard>
+
+          <DCArtboard id="strip" label="C · Vertical strip · 35 × 170 mm" width={260} height={620}>
+            <Strip/>
+          </DCArtboard>
+
+          <DCArtboard id="cap" label="D · Cap stickers · 35 mm · 3 colorways" width={620} height={280}>
+            <Caps/>
+          </DCArtboard>
+
+          <DCArtboard id="flavor" label="E · Flavor pack · 4 รส" width={820} height={240}>
+            <Flavors/>
+          </DCArtboard>
+
+          <DCArtboard id="hanger" label="F · Neck hanger · 50 × 100 mm" width={300} height={420}>
+            <Hanger/>
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection id="print" title="Print-ready" subtitle="A4 sheet · die-cut · พร้อมส่งโรงพิมพ์">
+          <DCArtboard id="print-sheet" label="A4 die-cut sheet · 6up 80mm circles" width={620} height={840}>
+            <PrintSheet/>
+          </DCArtboard>
+        </DCSection>
+      </DesignCanvas>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+
+</body>
+</html>
