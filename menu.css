@@ -591,3 +591,45 @@ body.font-rounded .word { letter-spacing: -0.03em; font-weight: 800; }
 @media (max-width: 720px) {
   .float-line { display: inline-flex; }
 }
+
+/* ---------- Promotion banner ---------- */
+.promo-banner {
+  margin: clamp(24px, 4vw, 36px) 0 0;
+  background: linear-gradient(135deg, var(--c-yellow-soft) 0%, #fff8dc 100%);
+  border: 2px solid var(--c-yellow);
+  border-radius: var(--r-lg);
+  padding: clamp(18px, 3vw, 28px) clamp(20px, 3.5vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.promo-tag {
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--c-ink);
+  opacity: .55;
+}
+.promo-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 16px;
+}
+.promo-lead {
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-weight: 700;
+  color: var(--c-ink);
+}
+.promo-detail {
+  font-size: clamp(14px, 2vw, 16px);
+  color: var(--c-ink);
+}
+.promo-price {
+  color: #c0392b;
+  font-size: 1.15em;
+}
+.promo-was {
+  opacity: .45;
+  font-size: .9em;
+}
