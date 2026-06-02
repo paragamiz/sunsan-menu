@@ -11,7 +11,7 @@
   href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Mali:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
   rel="stylesheet"
 />
-<link rel="stylesheet" href="menu.css?v=9" />
+<link rel="stylesheet" href="menu.css?v=10" />
 </head>
 <body>
 
@@ -23,9 +23,9 @@
     <img class="sun" src="assets/sun-mark-ink.png" alt="SunSan sun mark" />
     <div class="kicker mono">Catering · Drinks · Events · Bangkok</div>
     <h1>s<span class="u">u</span>nsan</h1>
-    <div class="th">ซันซัง · เมนูออนไลน์</div>
+    <div class="th" data-en="Sunsan · Online Menu">ซันซัง · เมนูออนไลน์</div>
     <p class="tagline">a little sunshine <span class="dot">·</span> for every gathering.</p>
-    <div class="open-note">พร้อมเสิร์ฟทุกงานอีเวนท์ ☀ · READY TO EAT FOOD / DRINKS</div>
+    <div class="open-note" data-en="Ready for every event ☀ · READY TO EAT FOOD / DRINKS">พร้อมเสิร์ฟทุกงานอีเวนท์ ☀ · READY TO EAT FOOD / DRINKS</div>
   </div>
 </header>
 
@@ -33,12 +33,13 @@
 <nav class="navbar" id="navbar">
   <div class="wrap">
     <span class="mini"><img src="assets/sun-mark-ink.png" alt="" />sunsan</span>
-    <a class="chip" href="#sets" data-target="sets">ข้าวกล่อง <span class="en">Boxes</span></a>
-    <a class="chip" href="#drinks" data-target="drinks">เครื่องดื่ม <span class="en">Drinks</span></a>
-    <a class="chip" href="#events" data-target="events">ขายส่ง · อีเวนท์ <span class="en">Events</span></a>
+    <a class="chip" href="#sets" data-target="sets" data-en="Boxes">ข้าวกล่อง <span class="en">Boxes</span></a>
+    <a class="chip" href="#drinks" data-target="drinks" data-en="Drinks">เครื่องดื่ม <span class="en">Drinks</span></a>
+    <a class="chip" href="#events" data-target="events" data-en="Events">ขายส่ง · อีเวนท์ <span class="en">Events</span></a>
+    <button class="lang-toggle mono" id="langToggle" type="button" aria-label="Switch language">EN</button>
     <a class="line-btn" href="https://lin.ee/Xh5UlbS" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.6 7.4 8.4 8 .3.07.78.22.9.5.1.26.06.66.03.92l-.14.86c-.04.26-.2 1 .9.55s5.9-3.48 8.05-5.96C21.6 14.3 22 12.8 22 11.1 22 6.6 17.5 3 12 3Z" fill="#fff"/></svg>
-      สั่งผ่าน LINE
+      <span data-en="Order via LINE">สั่งผ่าน LINE</span>
     </a>
   </div>
 </nav>
@@ -48,39 +49,39 @@
   <!-- =========================== BENTO SETS =========================== -->
   <section class="menu-section" id="sets" data-screen-label="sets">
     <div class="sec-head">
-      <div class="label mono">01 · ข้าวกล่อง</div>
+      <div class="label mono" data-en="01 · Bento boxes">01 · ข้าวกล่อง</div>
       <h2>Bento boxes</h2>
-      <p class="sub">ข้าวกล่องอบอุ่น สั่งทีละกล่องก็ได้ ผสมกล่องไหนก็ได้ · ราคาต่อกล่อง · สั่งล่วงหน้า 1 สัปดาห์</p>
+      <p class="sub" data-en="Warm bento boxes · order one at a time · mix any boxes · price per box · order 1 week ahead">ข้าวกล่องอบอุ่น สั่งทีละกล่องก็ได้ ผสมกล่องไหนก็ได้ · ราคาต่อกล่อง · สั่งล่วงหน้า 1 สัปดาห์</p>
     </div>
 
     <div class="sets">
       <article class="set-card feature">
         <div class="ribbon">today's pick</div>
         <div class="top">
-          <div class="name" style="font-size: 40px; line-height: 1.5">ข้าวคอหมูย่าง</div>
+          <div class="name" style="font-size: 40px; line-height: 1.5" data-en="Grilled Pork Neck over Rice">ข้าวคอหมูย่าง</div>
           <div class="price" style="font-size: 50px">฿89</div>
         </div>
-        <div class="items">คอหมูย่างหมักอย่างดี มันน้อย หอมอร่อย</div>
-        <div class="pills"><span class="pill">เพิ่มไข่ดาว +10</span><span class="pill">อิ่มแน่นอน</span></div>
+        <div class="items" data-en="Well-marinated grilled pork neck · lean & aromatic">คอหมูย่างหมักอย่างดี มันน้อย หอมอร่อย</div>
+        <div class="pills"><span class="pill" data-en="Add fried egg +10">เพิ่มไข่ดาว +10</span><span class="pill" data-en="Filling for sure">อิ่มแน่นอน</span></div>
       </article>
 
       <article class="set-card">
         <img class="watermark" src="assets/sun-mark-ink.png" alt="" />
         <div class="top">
-          <div class="name" style="line-height: 1.5; font-size: 30px">ข้าวกระเพรา</div>
+          <div class="name" style="line-height: 1.5; font-size: 30px" data-en="Stir-fried Basil over Rice">ข้าวกระเพรา</div>
           <div class="price">฿69-99</div>
         </div>
-        <div class="items">หมูสับ · หมูชิ้น · ไก่ชิ้น · เนื้อสับ</div>
-        <div class="pills"><span class="pill">เพิ่มไข่ดาว +10</span></div>
+        <div class="items" data-en="Minced pork · sliced pork · sliced chicken · minced beef">หมูสับ · หมูชิ้น · ไก่ชิ้น · เนื้อสับ</div>
+        <div class="pills"><span class="pill" data-en="Add fried egg +10">เพิ่มไข่ดาว +10</span></div>
       </article>
 
       <article class="set-card">
         <img class="watermark" src="assets/sun-mark-ink.png" alt="" />
         <div class="top">
-          <div class="name" style="line-height: 1.5; font-size: 30px">มาม่าผัด</div>
+          <div class="name" style="line-height: 1.5; font-size: 30px" data-en="Stir-fried Instant Noodles">มาม่าผัด</div>
           <div class="price">฿69</div>
         </div>
-        <div class="items">แฮม · ไส้กรอก · หมูสับ · ไก่ชิ้น</div>
+        <div class="items" data-en="Minced pork · sliced pork · sliced chicken · minced beef">แฮม · ไส้กรอก · หมูสับ · ไก่ชิ้น</div>
         <div class="pills"><span class="pill">
 </span><span class="pill">
 </span></div>
@@ -90,21 +91,21 @@
         <img class="watermark" src="assets/sun-mark-ink.png" alt="" />
         <div class="top">
           <div class="name" style="line-height: 1.5; font-size: 30px"><span class="tag">
-</span>ส้มตำ + น่องไก่ทอด</div>
+</span><span data-en="Papaya Salad + Fried Chicken Drumstick">ส้มตำ + น่องไก่ทอด</span></div>
           <div class="price"><span class="cur">฿</span>79</div>
         </div>
-        <div class="items">ปรับเปลี่ยนได้ตามต้องการ </div>
-        <div class="pills"><span class="pill">ข้าวเหนียว +10</span><span class="pill">
+        <div class="items" data-en="Customizable as you like">ปรับเปลี่ยนได้ตามต้องการ </div>
+        <div class="pills"><span class="pill" data-en="Sticky rice +10">ข้าวเหนียว +10</span><span class="pill">
 </span></div>
       </article>
 
       <article class="set-card">
         <img class="watermark" src="assets/sun-mark-ink.png" alt="" />
         <div class="top">
-          <div class="name" style="line-height: 1.5; font-size: 30px">ข้าวหมกไก่ติดสะโพก</div>
+          <div class="name" style="line-height: 1.5; font-size: 30px" data-en="Chicken Biryani (thigh)">ข้าวหมกไก่ติดสะโพก</div>
           <div class="price">฿89</div>
         </div>
-        <div class="items">พร้อมน้ำจิ้ม homemade รสเด็ด</div>
+        <div class="items" data-en="With zesty homemade dipping sauce">พร้อมน้ำจิ้ม homemade รสเด็ด</div>
         <div class="pills"><span class="pill">เพิ่มไข่ดาว +10</span></div>
       </article>
     </div>
@@ -113,15 +114,15 @@
   <!-- ============================= DRINKS ============================= -->
   <section class="menu-section" id="drinks" data-screen-label="drinks">
     <div class="sec-head">
-      <div class="label mono">02 · ชานม & เครื่องดื่ม</div>
+      <div class="label mono" data-en="02 · Milk tea & drinks">02 · ชานม & เครื่องดื่ม</div>
       <h2>Milk tea &amp; drinks</h2>
-      <p class="sub">ชงสดทุกงาน · ใช้นมสด · ไม่ใส่ครีมเทียม</p>
+      <p class="sub" data-en="Freshly brewed · real milk · no creamer">ชงสดทุกงาน · ใช้นมสด · ไม่ใส่ครีมเทียม</p>
     </div>
 
     <div class="drinks">
       <div class="drink">
         <div class="info">
-          <div class="name">ชานม classic ขวดลิตร</div>
+          <div class="name" data-en="Classic Milk Tea · 1L bottle">ชานม classic ขวดลิตร</div>
           <div class="desc">ชาไทยแท้คุณภาพสูง · นมสด</div>
         </div>
         <div class="dotlead"></div>
@@ -129,7 +130,7 @@
       </div>
       <div class="drink">
         <div class="info">
-          <div class="name">ชามะนาว ขวดลิตร</div>
+          <div class="name" data-en="Lemon Tea · 1L bottle">ชามะนาว ขวดลิตร</div>
           <div class="desc">ชาไทยแท้คุณภาพสูง · มะนาวสด</div>
         </div>
         <div class="dotlead"></div>
@@ -137,7 +138,7 @@
       </div>
       <div class="drink">
         <div class="info">
-          <div class="name">ชานม classic  ขวด 250ml</div>
+          <div class="name" data-en="Classic Milk Tea · 250ml bottle">ชานม classic  ขวด 250ml</div>
           <div class="desc">ชาไทยแท้คุณภาพสูง · นมสด</div>
         </div>
         <div class="dotlead"></div>
@@ -145,20 +146,20 @@
       </div>
       <div class="drink">
         <div class="info">
-          <div class="name">ชามะนาว ขวด 250ml</div>
+          <div class="name" data-en="Lemon Tea · 250ml bottle">ชามะนาว ขวด 250ml</div>
           <div class="desc">ชาไทยแท้คุณภาพสูง · มะนาวสด</div>
         </div>
         <div class="dotlead"></div>
         <div class="price">฿39</div>
       </div>
-      <div class="drink-note"> สั่งเป็นชุดสำหรับงานมีส่วนลด — ทักไลน์ได้เลย</div>
+      <div class="drink-note" data-en=" Bulk orders for events get a discount — message us on LINE">สั่งเป็นชุดสำหรับงานมีส่วนลด — ทักไลน์ได้เลย</div>
     </div>
 
     <div class="promo-banner">
-      <div class="promo-tag mono">✦ promotion พิเศษ</div>
+      <div class="promo-tag mono" data-en="✦ special promotion">✦ promotion พิเศษ</div>
       <div class="promo-body">
-        <span class="promo-lead">สั่งอาหาร <strong>500 บาทขึ้นไป</strong></span>
-        <span class="promo-detail">รับสิทธิ์แลกซื้อ <strong>Tay's Gelato</strong> ถ้วยละ <strong class="promo-price">฿60</strong> <s class="promo-was">ปกติ ฿105</s></span>
+        <span class="promo-lead" data-en="Spend <strong>฿500 or more</strong>">สั่งอาหาร <strong>500 บาทขึ้นไป</strong></span>
+        <span class="promo-detail" data-en="Get <strong>Tay&#39;s Gelato</strong> for <strong class=&quot;promo-price&quot;>฿60</strong> a cup <s class=&quot;promo-was&quot;>usually ฿105</s>">รับสิทธิ์แลกซื้อ <strong>Tay's Gelato</strong> ถ้วยละ <strong class="promo-price">฿60</strong> <s class="promo-was">ปกติ ฿105</s></span>
       </div>
     </div>
   </section>
@@ -166,44 +167,44 @@
   <!-- ======================= WHOLESALE / EVENTS ======================= -->
   <section class="menu-section" id="events" data-screen-label="events">
     <div class="sec-head">
-      <div class="label mono">03 · ขายส่ง & จัดอีเวนท์</div>
+      <div class="label mono" data-en="03 · Wholesale & events">03 · ขายส่ง & จัดอีเวนท์</div>
       <h2>Big batch energy</h2>
-      <p class="sub">งานเลี้ยง สัมมนา ออกบูธ หรือเลี้ยงทั้งออฟฟิศ — เราจัดให้ครบ ตั้งแต่ข้าวกล่องยันเครื่องดื่ม</p>
+      <p class="sub" data-en="Parties, seminars, booths, or feeding the whole office — we handle it all, from bento boxes to drinks">งานเลี้ยง สัมมนา ออกบูธ หรือเลี้ยงทั้งออฟฟิศ — เราจัดให้ครบ ตั้งแต่ข้าวกล่องยันเครื่องดื่ม</p>
     </div>
 
     <div class="trays">
       <div class="tray-head">
-        <div class="label mono">เมนูถาด · party trays</div>
-        <span class="tray-badge">ราคาแจ้งตามจำนวน · ทักไลน์</span>
+        <div class="label mono" data-en="Tray menu · party trays">เมนูถาด · party trays</div>
+        <span class="tray-badge" data-en="Price by quantity · LINE us">ราคาแจ้งตามจำนวน · ทักไลน์</span>
       </div>
-      <p class="tray-note">เลือกเมนูถาดได้ตามใจ จัดเป็นถาดใหญ่สำหรับงาน เลือกกี่อย่างก็ได้ — แจ้งจำนวนคนกับเมนูที่อยากได้ เดี๋ยวจัดเซ็ตให้พอดีงาน</p>
+      <p class="tray-note" data-en="Pick any tray dishes you like, served in large trays for events — just tell us the headcount and the dishes you want, and we'll set it up to fit your event">เลือกเมนูถาดได้ตามใจ จัดเป็นถาดใหญ่สำหรับงาน เลือกกี่อย่างก็ได้ — แจ้งจำนวนคนกับเมนูที่อยากได้ เดี๋ยวจัดเซ็ตให้พอดีงาน</p>
       <div class="tray-cols">
         <div class="tray-cat">
-          <h4>ข้าว</h4>
+          <h4 data-en="Rice">ข้าว</h4>
           <ul>
-            <li>ข้าวผัด</li>
-            <li>ข้าวหมกไก่</li>
-            <li>ข้าวสวย</li>
+            <li data-en="Fried rice">ข้าวผัด</li>
+            <li data-en="Chicken biryani">ข้าวหมกไก่</li>
+            <li data-en="Steamed rice">ข้าวสวย</li>
           </ul>
         </div>
         <div class="tray-cat">
-          <h4>กับข้าว</h4>
+          <h4 data-en="Dishes">กับข้าว</h4>
           <ul>
-            <li>น่องไก่ทอด</li>
-            <li>คอหมูย่าง</li>
-            <li>ปลากระพงทอดน้ำปลา</li>
+            <li data-en="Fried chicken drumstick">น่องไก่ทอด</li>
+            <li data-en="Grilled pork neck">คอหมูย่าง</li>
+            <li data-en="Fried sea bass with fish sauce">ปลากระพงทอดน้ำปลา</li>
           </ul>
         </div>
         <div class="tray-cat">
-          <h4>สลัด</h4>
+          <h4 data-en="Salad">สลัด</h4>
           <ul>
-            <li>สลัดงา ผักผลไม้ปูอัด (signature)</li>
+            <li data-en="Sesame salad, fruit & crab stick (signature)">สลัดงา ผักผลไม้ปูอัด (signature)</li>
           </ul>
         </div>
         <div class="tray-cat">
-          <h4>ผลไม้</h4>
+          <h4 data-en="Fruit">ผลไม้</h4>
           <ul>
-            <li>ผลไม้รวมตามฤดู</li>
+            <li data-en="Seasonal mixed fruit">ผลไม้รวมตามฤดู</li>
           </ul>
         </div>
       </div>
@@ -211,31 +212,31 @@
 
     <div class="wholesale">
       <img class="sun-bg" src="assets/sun-mark-cream.png" alt="" />
-      <div class="label mono">Catering · ขายส่ง</div>
-      <h3>งานเลี้ยง 50 คน?  จัดไปค่ะ</h3>
-      <p class="lead">สั่งล่วงหน้าอย่างน้อย 1 สัปดาห์ เลือกเซ็ตผสมได้ จัดส่งถึงงาน </p>
+      <div class="label mono" data-en="Catering · Wholesale">Catering · ขายส่ง</div>
+      <h3 data-en="A party for 50? We&#39;ve got you">งานเลี้ยง 50 คน?  จัดไปค่ะ</h3>
+      <p class="lead" data-en="Order at least 1 week ahead · mix any sets · delivered to your event">สั่งล่วงหน้าอย่างน้อย 1 สัปดาห์ เลือกเซ็ตผสมได้ จัดส่งถึงงาน </p>
 
       <div class="perks">
         <div class="perk">
           <div class="big">10+</div>
-          <div class="cap">ขั้นต่ำต่อออเดอร์ขายส่ง</div>
+          <div class="cap" data-en="minimum per wholesale order">ขั้นต่ำต่อออเดอร์ขายส่ง</div>
         </div>
         <div class="perk">
           <div class="big">creative</div>
-          <div class="cap">อยากกินอะไรลองบอกเรามาก่อน</div>
+          <div class="cap" data-en="tell us what you're craving">อยากกินอะไรลองบอกเรามาก่อน</div>
         </div>
         <div class="perk">
-          <div class="big">ฟรี</div>
-          <div class="cap">ค่าจัดส่งในเขตกรุงเทพฯ เมื่อสั่ง 50 กล่องขึ้นไป</div>
+          <div class="big" data-en="free">ฟรี</div>
+          <div class="cap" data-en="delivery within Bangkok on orders of 50+ boxes">ค่าจัดส่งในเขตกรุงเทพฯ เมื่อสั่ง 50 กล่องขึ้นไป</div>
         </div>
       </div>
 
       <div class="cta-row">
         <a class="line-btn" href="https://lin.ee/Xh5UlbS" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.6 7.4 8.4 8 .3.07.78.22.9.5.1.26.06.66.03.92l-.14.86c-.04.26-.2 1 .9.55s5.9-3.48 8.05-5.96C21.6 14.3 22 12.8 22 11.1 22 6.6 17.5 3 12 3Z" fill="#fff"/></svg>
-          ขอใบเสนอราคา · ทักไลน์
+          <span data-en="Get a quote · LINE us">ขอใบเสนอราคา · ทักไลน์</span>
         </a>
-        <span class="quip">ทักมานะ เดี๋ยวมาตอบ ☀</span>
+        <span class="quip" data-en="Message us, we'll reply soon ☀">ทักมานะ เดี๋ยวมาตอบ ☀</span>
       </div>
     </div>
   </section>
@@ -247,7 +248,7 @@
   <div class="wrap">
     <img class="sun" src="assets/sun-mark-ink.png" alt="" />
     <div class="word">sunsan</div>
-    <div class="th">ซันซัง · catering & drinks</div>
+    <div class="th" data-en="Sunsan · catering & drinks">ซันซัง · catering & drinks</div>
     <div class="contacts">
       <a href="https://lin.ee/Xh5UlbS" target="_blank" rel="noopener" style="background:var(--c-line);color:#fff;border-color:transparent;">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.6 7.4 8.4 8 .3.07.78.22.9.5.1.26.06.66.03.92l-.14.86c-.04.26-.2 1 .9.55s5.9-3.48 8.05-5.96C21.6 14.3 22 12.8 22 11.1 22 6.6 17.5 3 12 3Z" fill="#fff"/></svg>
@@ -256,13 +257,13 @@
       <a href="tel:0950955775">☎ 095 095 5775</a>
       <a href="https://instagram.com/sunsancatering" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@sunsancatering</a>
     </div>
-    <div class="meta">sunsan.co · Bangkok · Thailand · เปิดดูเมนูได้ตลอด</div>
+    <div class="meta" data-en="sunsan.co · Bangkok · Thailand · menu open anytime">sunsan.co · Bangkok · Thailand · เปิดดูเมนูได้ตลอด</div>
   </div>
 </footer>
 
 <a class="line-btn float-line" href="https://lin.ee/Xh5UlbS" target="_blank" rel="noopener">
   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.6 7.4 8.4 8 .3.07.78.22.9.5.1.26.06.66.03.92l-.14.86c-.04.26-.2 1 .9.55s5.9-3.48 8.05-5.96C21.6 14.3 22 12.8 22 11.1 22 6.6 17.5 3 12 3Z" fill="#fff"/></svg>
-  สั่ง LINE
+  <span data-en="Order LINE">สั่ง LINE</span>
 </a>
 
 <script>
@@ -287,6 +288,34 @@
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
   sections.forEach((s) => s && spy.observe(s));
+</script>
+
+<script>
+  // Language toggle (TH / EN)
+  (function () {
+    const els = [...document.querySelectorAll('[data-en]')];
+    // capture original Thai markup once
+    els.forEach((el) => { el.dataset.th = el.innerHTML; });
+
+    const btn = document.getElementById('langToggle');
+    let lang = localStorage.getItem('sunsan-lang') || 'th';
+
+    function apply(l) {
+      els.forEach((el) => {
+        el.innerHTML = l === 'en' ? el.dataset.en : el.dataset.th;
+      });
+      document.documentElement.lang = l;
+      document.body.classList.toggle('lang-en', l === 'en');
+      if (btn) btn.textContent = l === 'en' ? 'TH' : 'EN';
+      localStorage.setItem('sunsan-lang', l);
+    }
+
+    apply(lang);
+    if (btn) btn.addEventListener('click', () => {
+      lang = lang === 'en' ? 'th' : 'en';
+      apply(lang);
+    });
+  })();
 </script>
 
 <!-- ============================== TWEAKS ============================== -->
