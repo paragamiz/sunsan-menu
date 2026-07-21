@@ -504,7 +504,7 @@ img { display: block; max-width: 100%; }
 }
 .perks {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: clamp(12px, 2.5vw, 20px);
   margin: clamp(24px, 4vw, 36px) 0;
 }
